@@ -90,17 +90,23 @@
 {
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
+    UITapGestureRecognizer *g = [[UITapGestureRecognizer alloc] initWithTarget: self
+                                                                        action: @selector(goToScanning)];
+    
+    [self.view addGestureRecognizer: g];
+    
+    
 //    UIImageView *imageBackGrnd = [[UIImageView alloc] initWithFrame:self.view.frame];
 //    imageBackGrnd.image = [UIImage imageNamed:@"DefaultDom.jpg"];
 //    [self.view addSubview:imageBackGrnd];
 //    
 
-    [NSTimer scheduledTimerWithTimeInterval:1
-                                     target:self
-                                   selector:@selector(goToScanning)
-                                   userInfo:nil
-                                    repeats:NO];
-    
+//    [NSTimer scheduledTimerWithTimeInterval:1
+//                                     target:self
+//                                   selector:@selector(goToScanning)
+//                                   userInfo:nil
+//                                    repeats:NO];
+//    
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.

@@ -165,9 +165,6 @@
     isStartScan = 1;
 }
 
-
-
-
 #pragma mark -ToolBar button-
 
 -(IBAction)clickToFav:(id)sender

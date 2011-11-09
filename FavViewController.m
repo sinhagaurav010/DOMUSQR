@@ -196,7 +196,7 @@
     if(isDeleting == 1)
     {
         UIButton *button = (UIButton*)[arrayDel objectAtIndex:indexPath.row];
-        button.frame = CGRectMake(600, 5, 66, 38);
+        button.frame = CGRectMake(0, 5, 66, 38);
         [cell.contentView addSubview:button];
         
     }
@@ -205,6 +205,7 @@
     
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [arrayFav objectAtIndex:indexPath.row];
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
 	//cell.textLabel.text = [arrayItems objectAtIndex:indexPath.row];
