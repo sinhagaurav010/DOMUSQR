@@ -2,9 +2,34 @@
 //  SplashScreenViewController.m
 //  BarCodeReader
 //
-//  Created by Rohit Dhawan on 04/10/11.
-//  Copyright 2011sinhagaurav010@gmail.com. All rights reserved.
+//  Created by gaurav sinha on 04/10/11.
+//  Copyright 2011 sinhagaurav010@gmail.com. All rights reserved.
 //
+
+/*
+ 1.
+ The BACK button of the web browser screen – should now read SCAN [not BACK]
+ BACK buttons on all other screens are fine.
+ 
+ 2.
+ We need to clear any favourites or enquiry forms that have been made by the previous user.
+ 
+ Can this be done by:
+ Pressing the IPAD HOME button and it returns to the IPAD home screen that includes the DOMUS QR button.
+ This action should remove/ delete all saved “favourites” and any completed “enquiry form” information from the DOMUS APP.
+ 
+ Then Press the DOMUS QR button and it goes to the “splash page” and stays there.
+ The Splash Page should read/say  “TOUCH TO SCAN”
+ The Splash page displays until it is touched.. and   
+ then it goes to the Scanning page/camera
+ 
+ I am sorry for misunderstanding for iPad home button.
+ Apple does not allow coding for "Home button in device".On pressing it app always in background.What  i am going to do that on touching(if you want then on action of "long Press") the banner in camera screen,app will navigate to Splash screen where all the favourites and enquiry data will remove.And on touching the Splash page,user will have camera screen for scanning.
+ 
+ Let me know what you think?
+ 
+ I am sorry for misunderstanding.
+ */
 
 #import "SplashScreenViewController.h"
 

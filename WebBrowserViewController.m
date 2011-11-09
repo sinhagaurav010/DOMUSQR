@@ -163,7 +163,7 @@
 - (void)viewDidLoad
 {
     
-        self.navigationItem.backBarButtonItem    = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+    self.navigationItem.backBarButtonItem    = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                                 style:UIBarButtonItemStyleDone
                                                                                target:nil 
                                                                                action:nil];

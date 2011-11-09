@@ -195,6 +195,11 @@
 }
 - (void)viewDidLoad
 {
+    self.navigationItem.backBarButtonItem    = [[UIBarButtonItem alloc] initWithTitle:@"SCAN"
+                                                                                style:UIBarButtonItemStyleDone
+                                                                               target:nil 
+                                                                               action:nil];
+    
     //UIView *viewTitle = [[UIView alloc] initWithFrame:self.navigationItem.titleView.frame];
     
     UIImageView *imageViewDomus = [[UIImageView alloc] initWithFrame:CGRectMake(0,
