@@ -127,19 +127,21 @@
 }
 -(IBAction)QRImageShow:(id)sender
 {
-    QRImageViewController *QRImageController = [[QRImageViewController alloc] init];
-    [self.navigationController pushViewController:QRImageController 
-                                         animated:YES];
-    [QRImageController release];
-}
-
--(IBAction)EnquiryForm:(id)sender
-{
     EnquiryFormViewController *EnquiryViewController = [[EnquiryFormViewController alloc] initWithNibName:@"EnquiryViewController_iPad" bundle:nil];
     
     [self.navigationController pushViewController:EnquiryViewController 
                                          animated:YES];
     [EnquiryViewController release];
+
+//    QRImageViewController *QRImageController = [[QRImageViewController alloc] init];
+//    [self.navigationController pushViewController:QRImageController 
+//                                         animated:YES];
+//    [QRImageController release];
+}
+
+-(IBAction)EnquiryForm:(id)sender
+{
+    exit(0);  
 }
 
 

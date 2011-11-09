@@ -195,6 +195,7 @@
 }
 - (void)viewDidLoad
 {
+    
     self.navigationItem.backBarButtonItem    = [[UIBarButtonItem alloc] initWithTitle:@"SCAN"
                                                                                 style:UIBarButtonItemStyleDone
                                                                                target:nil 
