@@ -84,6 +84,11 @@
     
     [homeController release];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES];
+}
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad

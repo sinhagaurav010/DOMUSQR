@@ -245,7 +245,18 @@
     
     [ZBarReaderView class];
     readerView.readerDelegate = self;
+    //readerView.supportedOrientationsMask = supportedOrientationsMask;
+    ZBarImageScanner *scanner = readerView.scanner;
+    // TODO: (optional) additional reader configuration here
     
+    // EXAMPLE: disable rarely used I2/5 to improve performance
+    [scanner setSymbology: 0
+                   config: ZBAR_CFG_ENABLE
+                       to: 0];
+    [scanner setSymbology: ZBAR_QRCODE
+                   config: ZBAR_CFG_ENABLE
+                       to: 1];    
+    //[scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:0];
     
     ///readerView.showsFPS = YES;
     //readerView.scanCrop = CGRectMake(0, 0, 320, 200);

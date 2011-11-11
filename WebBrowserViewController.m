@@ -141,7 +141,7 @@
 
 -(IBAction)EnquiryForm:(id)sender
 {
-    exit(0);  
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
