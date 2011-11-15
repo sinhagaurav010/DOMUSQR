@@ -59,6 +59,7 @@
 		1CDB8EBD14163BE8004222A0 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB8EB814163BE8004222A0 /* libiconv.dylib */; };
 		1CDB8EBE14163BE8004222A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDB8EB914163BE8004222A0 /* QuartzCore.framework */; };
 		1CEC45C2141F72090078347A /* ViewPickerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEC45C1141F72090078347A /* ViewPickerTool.m */; };
+		1CEDE757147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEDE756147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg */; };
 		5D165404141FD9DA007C90DA /* EnquiryFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D165402141FD9DA007C90DA /* EnquiryFormViewController.m */; };
 		5D165405141FD9DA007C90DA /* EnquiryFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D165403141FD9DA007C90DA /* EnquiryFormViewController.xib */; };
 		5D165408141FDA21007C90DA /* EnquiryViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D165407141FDA21007C90DA /* EnquiryViewController_iPad.xib */; };
@@ -158,6 +159,7 @@
 		1CDB8EB914163BE8004222A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1CEC45C0141F72090078347A /* ViewPickerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPickerTool.h; sourceTree = "<group>"; };
 		1CEC45C1141F72090078347A /* ViewPickerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPickerTool.m; sourceTree = "<group>"; };
+		1CEDE756147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SPLASHSCREEN 1024x768px PORTRAIT.jpg"; sourceTree = "<group>"; };
 		5D165401141FD9DA007C90DA /* EnquiryFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnquiryFormViewController.h; sourceTree = "<group>"; };
 		5D165402141FD9DA007C90DA /* EnquiryFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnquiryFormViewController.m; sourceTree = "<group>"; };
 		5D165403141FD9DA007C90DA /* EnquiryFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnquiryFormViewController.xib; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		1C7F0D7C142719A9009DEBC4 /* Images&Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				1CEDE756147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg */,
 				1C1B3853143C99460081C520 /* BannerImageDomus.png */,
 				1CBE625F143AE75F002030A6 /* DefaultDom.jpg */,
 				1C627DDF14308F460073BD21 /* CameraClick.mp3 */,
@@ -286,8 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				1CBE6269143AF142002030A6 /* SplashScreenViewController */,
-				1C627DE1143094840073BD21 /* AVFoundation.framework */,
-				1C0C7289142B389400D34441 /* AudioToolbox.framework */,
 				1C0C7287142B363C00D34441 /* AdScreenFlash */,
 				1C7F0D7C142719A9009DEBC4 /* Images&Sounds */,
 				1C7F0D7D142719B2009DEBC4 /* FavViewController */,
@@ -319,6 +320,8 @@
 		1CDB8E5A141638D6004222A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C627DE1143094840073BD21 /* AVFoundation.framework */,
+				1C0C7289142B389400D34441 /* AudioToolbox.framework */,
 				1CDB8E5B141638D6004222A0 /* UIKit.framework */,
 				1CDB8E5D141638D6004222A0 /* Foundation.framework */,
 				1CDB8E5F141638D6004222A0 /* CoreGraphics.framework */,
@@ -582,6 +585,7 @@
 				1CBE6268143AF127002030A6 /* SplashScreenViewController.xib in Resources */,
 				1C1B3852143C824E0081C520 /* ImageDomus.JPG in Resources */,
 				1C1B3854143C99470081C520 /* BannerImageDomus.png in Resources */,
+				1CEDE757147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
