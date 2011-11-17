@@ -12,6 +12,7 @@
 		1C0C728A142B389400D34441 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0C7289142B389400D34441 /* AudioToolbox.framework */; };
 		1C1B3852143C824E0081C520 /* ImageDomus.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1C1B3851143C824E0081C520 /* ImageDomus.JPG */; };
 		1C1B3854143C99470081C520 /* BannerImageDomus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1B3853143C99460081C520 /* BannerImageDomus.png */; };
+		1C583A751475194D000B4964 /* DOMUSQRSPLASH.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C583A741475194D000B4964 /* DOMUSQRSPLASH.jpg */; };
 		1C627DE014308F460073BD21 /* CameraClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1C627DDF14308F460073BD21 /* CameraClick.mp3 */; };
 		1C71196514189893008BDCDE /* HomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C71196414189893008BDCDE /* HomeViewController_iPad.xib */; };
 		1C71196914189A6A008BDCDE /* ResultViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C71196814189A6A008BDCDE /* ResultViewController_iPad.xib */; };
@@ -78,6 +79,7 @@
 		1C0C7289142B389400D34441 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1C1B3851143C824E0081C520 /* ImageDomus.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ImageDomus.JPG; sourceTree = "<group>"; };
 		1C1B3853143C99460081C520 /* BannerImageDomus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BannerImageDomus.png; sourceTree = "<group>"; };
+		1C583A741475194D000B4964 /* DOMUSQRSPLASH.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DOMUSQRSPLASH.jpg; sourceTree = "<group>"; };
 		1C627DDF14308F460073BD21 /* CameraClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CameraClick.mp3; sourceTree = "<group>"; };
 		1C627DE1143094840073BD21 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1C71196414189893008BDCDE /* HomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_iPad.xib; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		1C7F0D7C142719A9009DEBC4 /* Images&Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				1C583A741475194D000B4964 /* DOMUSQRSPLASH.jpg */,
 				1CEDE756147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg */,
 				1C1B3853143C99460081C520 /* BannerImageDomus.png */,
 				1CBE625F143AE75F002030A6 /* DefaultDom.jpg */,
@@ -586,6 +589,7 @@
 				1C1B3852143C824E0081C520 /* ImageDomus.JPG in Resources */,
 				1C1B3854143C99470081C520 /* BannerImageDomus.png in Resources */,
 				1CEDE757147250DF0057E5D1 /* SPLASHSCREEN 1024x768px PORTRAIT.jpg in Resources */,
+				1C583A751475194D000B4964 /* DOMUSQRSPLASH.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
