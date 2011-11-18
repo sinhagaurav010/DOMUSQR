@@ -146,7 +146,6 @@
 {
     //   if(section == 0)
     return [arrayFav count];
-    
 }
 
 -(IBAction)deleteAll:(id)sender
@@ -198,6 +197,11 @@
         UIButton *button = (UIButton*)[arrayDel objectAtIndex:indexPath.row];
         button.frame = CGRectMake(0, 5, 66, 38);
         [cell.contentView addSubview:button];
+        
+        [cell.textLabel setFrame:CGRectMake(cell.textLabel.frame.origin.x+40, 
+                                            cell.textLabel.frame.origin.y,
+                                            cell.textLabel.frame.size.width,
+                                            cell.textLabel.frame.size.height)];
         
     }
     //    fieldBook.frame = CGRectMake(12, 10, cell.frame.size.width-24, cell.frame.size.height);
