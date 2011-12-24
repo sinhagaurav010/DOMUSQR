@@ -2,7 +2,7 @@
 //  Constant.h
 //  BarCodeReader
 //
-//  Created by Rohit Dhawan on 06/09/11.
+//  Created by   on 06/09/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
