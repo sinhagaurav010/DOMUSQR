@@ -132,16 +132,25 @@
     [self.navigationController pushViewController:EnquiryViewController 
                                          animated:YES];
     [EnquiryViewController release];
-
-//    QRImageViewController *QRImageController = [[QRImageViewController alloc] init];
-//    [self.navigationController pushViewController:QRImageController 
-//                                         animated:YES];
-//    [QRImageController release];
+    
+    //    QRImageViewController *QRImageController = [[QRImageViewController alloc] init];
+    //    [self.navigationController pushViewController:QRImageController 
+    //                                         animated:YES];
+    //    [QRImageController release];
 }
 
 -(IBAction)EnquiryForm:(id)sender
 {
+    [WebBrowserViewController removeContentForKey:ENQDOM];
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
++(void)removeContentForKey:(NSString*)stringKey
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs removeObjectForKey:stringKey];
+    [prefs synchronize];
+    
 }
 
 
@@ -150,8 +159,8 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [webViewScan loadRequest:[NSURLRequest 
-              requestWithURL:[NSURL 
-               URLWithString:searchBar.text]]];
+                              requestWithURL:[NSURL 
+                                              URLWithString:searchBar.text]]];
     [searchBarScan resignFirstResponder];
 }
 
@@ -164,19 +173,20 @@
 
 - (void)viewDidLoad
 {
+    isFirstTime = 1;
     
     self.navigationItem.backBarButtonItem    = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                                 style:UIBarButtonItemStyleDone
                                                                                target:nil 
                                                                                action:nil];
     [self.navigationItem setTitle:@"DOMUS QR"];
- 
+    
     searchBarScan.delegate   = self;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view
                                               animated:YES];
     hud.labelText = @"Loading...";
-
+    
     webViewScan.delegate = self;
     UIScrollView *sv = [webViewScan.subviews objectAtIndex:0];
     [sv setZoomScale:4.0 animated:YES];
@@ -198,23 +208,26 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    isFirstTime = 0;
     [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
-                                                    message:@"Error in Network"
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-    
-    
-    [MBProgressHUD hideHUDForView:self.navigationController.view 
-                         animated:YES];
-
+    if(isFirstTime == 1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
+                                                        message:@"Error in Network"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+        
+        
+        [MBProgressHUD hideHUDForView:self.navigationController.view 
+                             animated:YES];
+    }
 }
 - (void)viewDidUnload
 {
@@ -225,18 +238,18 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-//    if(UIInterfaceOrientationPortrait   == interfaceOrientation || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
-//    {
-//        [webViewScan setFrame:CGRectMake(0, 
-//                                         44, 
-//                                         768, 872)];
-//        
-//    }
-//    else
-//        [webViewScan setFrame:CGRectMake(0, 
-//                                         44, 
-//                                         1024, 
-//                                         616)];
+    //    if(UIInterfaceOrientationPortrait   == interfaceOrientation || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+    //    {
+    //        [webViewScan setFrame:CGRectMake(0, 
+    //                                         44, 
+    //                                         768, 872)];
+    //        
+    //    }
+    //    else
+    //        [webViewScan setFrame:CGRectMake(0, 
+    //                                         44, 
+    //                                         1024, 
+    //                                         616)];
     // Return YES for supported orientations
 	return ( interfaceOrientation == UIInterfaceOrientationPortrait);
 }

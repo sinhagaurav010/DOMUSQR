@@ -18,3 +18,4 @@ UIImage *imageQRCode;
 BOOL isPort;
 #define NOTIFICATIONMODEPORT @"modeNOTPORT"
 #define NOTIFICATIONMODELAND @"modeNOTLAND"
+#define ENQDOM @"ENQDOM"

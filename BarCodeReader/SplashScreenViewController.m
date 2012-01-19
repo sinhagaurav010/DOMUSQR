@@ -72,6 +72,7 @@
 
 - (void)viewDidLoad
 {
+    [WebBrowserViewController removeContentForKey:ENQDOM];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     UITapGestureRecognizer *g = [[UITapGestureRecognizer alloc] initWithTarget: self

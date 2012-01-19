@@ -20,6 +20,7 @@
     UIBarButtonItem *buttonFav;
     UIBarButtonItem *buttonQR;
     UIBarButtonItem *buttonEnq;
+    BOOL isFirstTime;
 }
 -(void)saveTheUrlInFav;
 -(IBAction)Savefavourites:(id)sender;
@@ -27,5 +28,7 @@
 -(IBAction)favouritesNav:(id)sender;
 -(IBAction)QRImageShow:(id)sender;
 -(IBAction)EnquiryForm:(id)sender;
++(void)removeContentForKey:(NSString*)stringKey;
+
 
 @end

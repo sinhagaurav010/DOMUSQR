@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Constant.h"
 #import "HomeViewController.h"
+#import "WebBrowserViewController.h"
+
 @interface SplashScreenViewController : UIViewController
 
 @end

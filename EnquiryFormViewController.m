@@ -23,6 +23,7 @@
 
 - (void)dealloc
 {
+    
     [fieldTxt1 resignFirstResponder];
     
     [super dealloc];
@@ -70,13 +71,13 @@
                 }
             }
             stringMsg =[ stringMsg stringByAppendingString:@"<br><br>"];
-
+            
         }
-        [mcvc setSubject:@"Please review items listed/QR scanned"];
+        [mcvc setSubject:@"Customer Enquiry Record"];
         
         //NSString *messageBdy = stringTestWeb;
         //if([arrayFav count]>0)
-            [mcvc setMessageBody:stringMsg isHTML:YES];
+        [mcvc setMessageBody:stringMsg isHTML:YES];
         //else
         //{}//[mcvc setMessageBody:self.stringUrl isHTML:YES];
         
@@ -101,6 +102,34 @@
     [fieldTxt1 resignFirstResponder];
 	[self dismissModalViewControllerAnimated:YES];
 }
+-(void)back
+{
+    NSMutableDictionary *dictEnq = [[NSMutableDictionary alloc] init];
+    for(int i=0;i<[arrayText count];i++)
+    {
+        if([[[arrayText objectAtIndex:i] text] length]>0)
+            [dictEnq setObject:[[arrayText objectAtIndex:i] text] forKey:[arrayElement objectAtIndex:i]];
+        else
+            [dictEnq setObject:@"" forKey:[arrayElement objectAtIndex:i]];
+        
+    }
+    
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:dictEnq forKey:ENQDOM];
+    
+    [prefs synchronize];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#define mark -getContforKey-
+
++(id)getContforKey:(NSString*)stringKey
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:stringKey];
+}
+
 #pragma mark - View lifecycle
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -112,31 +141,39 @@
 - (void)viewDidLoad
 {
     
-//    arrayFav = [[NSMutableArray alloc] init];
-//    [arrayFav addObject:@"sdf"];
-//    [arrayFav addObject:@"dsf"];
-//    [arrayFav addObject:@"fvfvsdf"];
+    UIBarButtonItem *newBackButton				= [[UIBarButtonItem alloc] initWithTitle: @"Back" 
+                                                                         style: UIBarButtonItemStyleBordered
+                                                                        target:self  
+                                                                        action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = newBackButton;
+    [newBackButton release];
+    
+    
+    //    arrayFav = [[NSMutableArray alloc] init];
+    //    [arrayFav addObject:@"sdf"];
+    //    [arrayFav addObject:@"dsf"];
+    //    [arrayFav addObject:@"fvfvsdf"];
     
     [self.navigationItem setTitle:@"Enquiry Form"];
-
+    
     //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:.96 green:.643 blue:0.0 alpha:1.0]];
     
     self.view.backgroundColor = [UIColor grayColor];
     
-//    UIBarButtonItem *newBackButton				= [[UIBarButtonItem alloc] initWithTitle: @"Done" 
-//                                                                         style: UIBarButtonItemStyleBordered
-//                                                                        target:self  
-//                                                                        action:@selector(Done)];
-//    self.navigationItem.rightBarButtonItem = newBackButton;
-//    [newBackButton release];
-//    
+    //    UIBarButtonItem *newBackButton				= [[UIBarButtonItem alloc] initWithTitle: @"Done" 
+    //                                                                         style: UIBarButtonItemStyleBordered
+    //                                                                        target:self  
+    //                                                                        action:@selector(Done)];
+    //    self.navigationItem.rightBarButtonItem = newBackButton;
+    //    [newBackButton release];
+    //    
     
     fieldTxt1 = [[UITextField alloc] init];
     
     UIBarButtonItem *mailButton				= [[UIBarButtonItem alloc] initWithTitle: @"Email" 
-                                                                         style: UIBarButtonItemStyleBordered
-                                                                        target:self  
-                                                                        action:@selector(Email)];
+                                                                      style: UIBarButtonItemStyleBordered
+                                                                     target:self  
+                                                                     action:@selector(Email)];
     self.navigationItem.rightBarButtonItem = mailButton;
     [mailButton release];
     
@@ -161,12 +198,17 @@
     
     //    [arrayElement addObject:@"STAFF NAME"];
     
+    NSDictionary *dictEn = [EnquiryFormViewController getContforKey:ENQDOM];
+    
     for(int i=0;i<[arrayElement count]-1;i++)
     {
         
         UITextField *fieldTxt = [[UITextField alloc] init];
         if(i==0)
             [fieldTxt becomeFirstResponder];
+        if([dictEn objectForKey:[arrayElement objectAtIndex:i]])
+            fieldTxt.text = [dictEn objectForKey:[arrayElement objectAtIndex:i]];
+        fieldTxt.clearButtonMode = UITextFieldViewModeAlways;
         [arrayText addObject:fieldTxt];
     }
     
@@ -219,7 +261,7 @@
     
     //    fieldBook.frame = CGRectMake(12, 10, cell.frame.size.width-24, cell.frame.size.height);
     //    [cell addSubview:fieldBook];
-    cell.selectionStyle = UITableViewCellEditingStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
 	//cell.textLabel.text = [arrayItems objectAtIndex:indexPath.row];
     //    cell.textLabel.font = [UIFont boldSystemFontOfSize:15];

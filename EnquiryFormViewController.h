@@ -18,5 +18,6 @@
     UITextField *fieldTxt1;
     NSMutableArray *arrayElement;
 }
++(id)getContforKey:(NSString*)stringKey;
 
 @end
