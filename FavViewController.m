@@ -94,9 +94,21 @@
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
-	[self dismissModalViewControllerAnimated:YES];
-}
+    if(result == MFMailComposeResultSent)
+    {
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Succeed"
+                                                           message:@"Mail Sent" 
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"OK" 
+                                                 otherButtonTitles:nil];
+        [alerView show];
+        [alerView release];
 
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+}
 
 -(void)EmailTheLink
 {
@@ -115,7 +127,7 @@
         //        {
         //            [mcvc setSubject:[NSString stringWithFormat:@"%@",self.navigationItem.title]];
         //        }
-        [mcvc setSubject:@"Please review items listed/QR scanned"];
+        [mcvc setSubject:@"List of Domus Sample scanned"];
         
         //NSString *messageBdy = stringTestWeb;
         if([arrayFav count]>0)
@@ -211,7 +223,7 @@
     cell.textLabel.text = [arrayFav objectAtIndex:indexPath.row];
     cell.textLabel.textAlignment = UITextAlignmentCenter;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
 	//cell.textLabel.text = [arrayItems objectAtIndex:indexPath.row];
     //    cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
     //	cell.accessoryType = 1;
