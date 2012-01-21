@@ -77,7 +77,7 @@
             
             imageQRCode = [[UIImage alloc] initWithData:[[NSData alloc]initWithData:UIImagePNGRepresentation(img)]];
             //imageQRCode = img;
-            stringScanned = [[NSString alloc] initWithString:sym.data];
+            stringScanned = [[NSString alloc] initWithString:[sym.data stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
             
             isStartScan = 0;
             
