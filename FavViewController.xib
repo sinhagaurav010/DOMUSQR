@@ -90,7 +90,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">Swap to Edit</string>
+						<string key="IBUIText">Swipe to Edit</string>
 						<reference key="IBUITextColor" ref="507803704"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>

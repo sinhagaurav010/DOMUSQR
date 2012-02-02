@@ -99,8 +99,21 @@
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
+    if(result == MFMailComposeResultSent)
+    {
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Email Sent"
+                                                           message:nil 
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"OK" 
+                                                 otherButtonTitles:nil];
+        [alerView show];
+        [alerView release];
+        
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
     [fieldTxt1 resignFirstResponder];
-	[self dismissModalViewControllerAnimated:YES];
+//	[self dismissModalViewControllerAnimated:YES];
 }
 -(void)back
 {
@@ -208,7 +221,7 @@
             [fieldTxt becomeFirstResponder];
         if([dictEn objectForKey:[arrayElement objectAtIndex:i]])
             fieldTxt.text = [dictEn objectForKey:[arrayElement objectAtIndex:i]];
-        fieldTxt.clearButtonMode = UITextFieldViewModeAlways;
+//        fieldTxt.clearButtonMode = UITextFieldViewModeAlways;
         [arrayText addObject:fieldTxt];
     }
     

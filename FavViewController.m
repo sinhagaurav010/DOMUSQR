@@ -96,8 +96,8 @@
 {
     if(result == MFMailComposeResultSent)
     {
-        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Succeed"
-                                                           message:@"Mail Sent" 
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Email Sent"
+                                                           message:nil 
                                                           delegate:nil
                                                  cancelButtonTitle:@"OK" 
                                                  otherButtonTitles:nil];
@@ -127,7 +127,7 @@
         //        {
         //            [mcvc setSubject:[NSString stringWithFormat:@"%@",self.navigationItem.title]];
         //        }
-        [mcvc setSubject:@"List of Domus Sample scanned"];
+        [mcvc setSubject:@"List of Domus samples scanned"];
         
         //NSString *messageBdy = stringTestWeb;
         if([arrayFav count]>0)
